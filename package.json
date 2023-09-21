@@ -2,14 +2,11 @@
   "name": "headless-http-https",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
-  
+  "author": "Your Name",
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
@@ -17,5 +14,4 @@
     "micro-cors": "^0.1.1",
     "node-fetch": "^3.3.2"
   }
-  
 }
