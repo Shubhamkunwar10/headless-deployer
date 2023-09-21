@@ -19,6 +19,12 @@ module.exports = async (req, res) => {
     return;
   }
 
+  if (req.method === 'GET' && req.url === '/') {
+    // Handle a GET request to the root URL ("/") for a simple health check
+    res.status(200).json({ message: 'Serverless function is up and running!' });
+    return;
+  }
+
   try {
     const response = await fetch(backendUrl, { method, headers, body });
     const data = await response.json();
