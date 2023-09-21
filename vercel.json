@@ -1,0 +1,6 @@
+{
+    "routes": {
+      "/api/proxy": "api/proxy.js"
+    }
+  }
+  
