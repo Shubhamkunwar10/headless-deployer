@@ -1,18 +1,21 @@
 import express from 'express';
+import cors from 'cors'; // Import the cors middleware
 import fetch from 'node-fetch';
-import cors from 'cors'; 
 
 const app = express();
-const port = process.env.PORT || 8005;
+const PORT = process.env.PORT || 8005;
 
 app.use(express.json());
 
 // Enable CORS for all routes using cors middleware
 app.use(cors());
 
-// Health check route
+app.listen(PORT, () => {
+  console.log(`API listening on PORT ${PORT}`);
+});
+
 app.get('/', (req, res) => {
-  res.json({ message: 'Express server is up and running!' });
+  res.send('Hey, this is my API running 🥳');
 });
 
 // Proxy route to your HTTP backend
@@ -30,7 +33,4 @@ app.all('/proxy', async (req, res) => {
   }
 });
 
-// Start the Express server
-app.listen(port, () => {
-  console.log(`Express server is running on port ${port}`);
-});
+export default app;
